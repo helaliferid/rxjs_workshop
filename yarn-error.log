@@ -1,0 +1,47 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Station\.yarn\bin\yarn.js add parcel parcel-bundeler
+
+PATH: 
+  C:\Users\Station\.yarn\bin;C:\Users\Station\.config\yarn\global\node_modules\.bin;C:\Users\Station\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Station\bin;C:\Python310\Scripts;C:\Python310;C:\Python39\Scripts;C:\Python39;C:\tools\ruby27\bin;C:\Program Files (x86)\Python37-32;C:\Program Files (x86)\Python37-32\Scripts;C:\Users\Station\AppData\Roaming\Python\Python37\Scripts;C:\Python27;C:\Python27\Scripts;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\8.6.5\lib\extralibs\bin;C:\Program Files\Haskell Platform\8.6.5\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Haskell Platform\8.6.5\mingw\bin;C:\Program Files\dotnet;C:\Program Files (x86)\QuickTime\QTSystem;C:\Go\bin;C:\xampp\php;C:\Program Files\MongoDB\Server\4.0\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\kubectl;C:\Program Files\helm\windows-amd64;F:\FPC\3.0.4\bin\i386-Win32;C:\HashiCorp\Vagrant\bin;C:\Program Files\Sublime Text 3;C:\Program Files\Calibre2;C:\Gradle\gradle-6.8.2\bin;C:\Program Files\Java\jdk-11.0.3\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PowerShell\7;C:\Program Files\WireGuard;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;F:\flutter\bin;C:\Program Files (x86)\dotnet;C:\Users\Station\.cargo\bin;C:\Users\Station\AppData\Roaming\cabal\bin;C:\Users\Station\AppData\Roaming\local\bin;C:\Users\Station\AppData\Local\Microsoft\WindowsApps;C:\Users\Station\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\WebStorm 2020.1\bin;C:\Program Files\JetBrains\PyCharm 2019.1.3\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1.3\bin;C:\cmder;C:\Users\Station\go\bin;C:\Program Files\swipl\bin;C:\Program Files\heroku\bin;C:\Program Files\cmdr;C:\Users\Station\AppData\Roaming\Composer\vendor\bin;C:\Program Files (x86)\Graphviz2.38\bin;C:\Exercism;C:\Users\Station\.deno\bin;C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2019.3.1\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.3.3\bin;C:\Program Files\JetBrains\JetBrains Rider 2020.1.4\bin;C:\Program Files\IBM\Cloud\bin;C:\Users\Station\.dotnet\tools;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;F:\grpcurl_1.8.0_windows_x86_64;C:\Users\Station\AppData\Local\atom\app-1.57.0\resources\app\apm\bin;C:\Users\Station\AppData\Local\Pandoc;C:\Users\Station\AppData\Local\Programs\mongosh;C:\Program Files (x86)\GitHub CLI;C:\Users\Station\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/parcel-bundeler: Not found
+      at Request.params.callback [as _callback] (C:\Users\Station\.yarn\lib\cli.js:67029:18)
+      at Request.self.callback (C:\Users\Station\.yarn\lib\cli.js:140883:22)
+      at Request.emit (node:events:390:28)
+      at Request.<anonymous> (C:\Users\Station\.yarn\lib\cli.js:141855:10)
+      at Request.emit (node:events:390:28)
+      at IncomingMessage.<anonymous> (C:\Users\Station\.yarn\lib\cli.js:141777:12)
+      at Object.onceWrapper (node:events:509:28)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "reactive_rxjs",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "parcel ./src/index.html"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

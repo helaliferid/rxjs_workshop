@@ -8,11 +8,14 @@
     <title>Rxjs</title>
 </head>
 <body>
-    <div class="container" id="output">
-      <!-- affichage de la Liste-->
+    <div class="container" >
+     <pre>
+       <code id="output"> </code>
+    </pre>
+    <button class="btn btn-primary" id="addAccount">Add Account</button>
+    <button class="btn btn-primary" id="removeAccount">Remove Account</button>
+    <button class="btn btn-primary" id="cleanUpAccountList">Clear Account List</button>
     </div>
-    <!-- button to ajouter the localStorage accountsList  [{code:'',label:''}...]-->
-      <!-- button to supprimer the localStorage accountsList  [{code:'',label:''}...]-->
-      <!-- button to initalise accountList []-->
+    <script src="./reactiveStorage.ts" type="module"></script>
 </body>
 </html>

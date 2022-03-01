@@ -1,8 +1,8 @@
-import { first, map, Observable, take } from "rxjs";
+import { BehaviorSubject, first, map, Observable, take } from "rxjs";
 
 
 
-const source$ = new Observable((subscriber) => {
+const source$ = new BehaviorSubject((subscriber) => {
     setTimeout(function () {
         subscriber.next('tunis')
     }, 1000
@@ -24,11 +24,9 @@ const source$ = new Observable((subscriber) => {
 
 console.log('begin')
 
-const subscription_one = source$.pipe(
-    map(data => data.toUpperCase()),
-    take(2))
-    .subscribe({
+const subscription_one = source$.subscribe({
         next: (data) => {
+            console.log('from observer 3')
             console.log(data);
         },
         error: (error) => {
@@ -38,5 +36,37 @@ const subscription_one = source$.pipe(
             console.log('completed')
         }
     });
+
+const subscription_two = source$.subscribe({
+        next: (data) => {
+            console.log('from observer 2')
+            console.log(data);
+        },
+        error: (error) => {
+            console.error(error)
+        },
+        complete: () => {
+            console.log('completed')
+        }
+    });
+
+setTimeout(
+    function () {
+        source$ .subscribe({
+            next: (data) => {
+                console.log('from observer 3 after 10s')
+                console.log(data.value);
+            },
+            error: (error) => {
+                console.error(error)
+            },
+            complete: () => {
+                console.log('completed')
+            }
+        });
+    }, 10000)
+
+
+
 
 console.log('fin')

@@ -1,8 +1,8 @@
-import { from, fromEvent } from 'rxjs';
+import { buffer, bufferTime, from, fromEvent, map, Observable } from 'rxjs';
 
 
 const render = anchor => list => {
-    anchor.innerHTML = `${JSON.stringify(list, undefined, 3)}`
+    anchor.innerHTML = JSON.stringify(list);
 }
 
 const init = () => {
@@ -21,22 +21,20 @@ const init = () => {
 
 
 
-const localStorageinitStream =()=>{
- return from(localStorage.getItem('list')?localStorage.getItem('list'):'[]');
-}
-
-    
+const localStorageStream$ = new Observable(subscriber=>{
+    subscriber.next(JSON.parse(localStorage.getItem('list')))
+})
 
 
 
 const saveAccount = (account) => {
-    let list=JSON.parse(localStorage.getItem('list')) || [];
+    let list = JSON.parse(localStorage.getItem('list')) || [];
     list.push(account);
     localStorage.setItem('list', JSON.stringify(list))
 }
 
 const removeAccount = (id) => {
-    let list=JSON.parse(localStorage.getItem('list'));
+    let list = JSON.parse(localStorage.getItem('list'));
     list = list.filter(a => a.id !== id);
     localStorage.setItem('list', JSON.stringify(list))
 }
@@ -49,16 +47,23 @@ const clearAccountListButtonSource$ = fromEvent(controls.clearAccountListButton,
 
 
 const addAccountSubscription = addAccountButtonSource$.subscribe({
-    next: data => saveAccount({id:2,code:'401',label:'Fournisseurs'})
+    next: data => saveAccount({ id: 2, code: '401', label: 'Fournisseurs' })
 });
 
-const removeAccountSubscription = removeAccountButtonSource$.subscribe(console.log)
-const clearAccountSubscription = clearAccountListButtonSource$.subscribe(console.log)
-
-
-localStorageStream$.subscribe({
-    next: data =>{
-        console.log(data)
-        render(controls.output)(data)
+const removeAccountSubscription = removeAccountButtonSource$.subscribe({
+    next: (data) => {
+        removeAccount(2)
     }
 })
+const clearAccountSubscription = clearAccountListButtonSource$.subscribe({
+    next: data => localStorage.setItem('list', '[]')
+})
+
+
+localStorageStream$.
+    subscribe({
+        next: data => {
+            console.log(data)
+            render(controls.output)(data)
+        }
+    })
